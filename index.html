@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Артём & Елизавета · 22.08.2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Italiana&family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+/* ==========  ОСНОВА  ========== */
+:root{
+  --sage:#8A9A5B;
+  --sage-soft:#A8B57F;
+  --cream:#F5F1EA;
+  --cream-2:#E8E2D5;
+  --ink:#1A1A1A;
+  --bronze:#C9B89A;
+  --shadow: 0 10px 40px rgba(138,154,91,.08);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Inter',sans-serif;
+  font-weight:300;
+  background:var(--cream);
+  color:var(--ink);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{
+  max-width:480px;
+  margin:0 auto;
+  background:var(--cream);
+  position:relative;
+  overflow:hidden;
+}
+
+/* ==========  ТИПОГРАФИКА  ========== */
+.serif{font-family:'Cormorant Garamond',serif;font-weight:300;}
+.italiana{font-family:'Italiana',serif;}
+.eyebrow{
+  font-size:11px;
+  letter-spacing:.35em;
+  text-transform:uppercase;
+  color:var(--sage);
+  font-weight:400;
+}
+h1,h2{font-family:'Cormorant Garamond',serif;font-weight:300;letter-spacing:.02em;}
+
+/* ==========  HERO  ========== */
+.hero{
+  position:relative;
+  height:100vh;
+  min-height:640px;
+  background:url('IMG_1936.jpeg') center/cover;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  padding:48px 32px;
+  color:#fff;
+}
+.hero::after{
+  content:'';
+  position:absolute;inset:0;
+  background:linear-gradient(180deg, rgba(0,0,0,.15) 0%, rgba(0,0,0,0) 30%, rgba(0,0,0,.55) 100%);
+  pointer-events:none;
+}
+.hero > *{position:relative;z-index:2;}
+.hero-top{display:flex;justify-content:center;}
+.hero-top span{
+  font-size:10px;
+  letter-spacing:.4em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,.85);
+  border:1px solid rgba(255,255,255,.4);
+  padding:8px 18px;
+  border-radius:999px;
+  backdrop-filter:blur(6px);
+}
+.hero-bottom h1{
+  font-size:64px;
+  line-height:1;
+  font-style:italic;
+  margin-bottom:8px;
+}
+.hero-bottom .amp{
+  display:block;
+  font-size:48px;
+  font-style:italic;
+  color:var(--sage-soft);
+  margin:4px 0;
+}
+.hero-date{
+  margin-top:28px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  font-size:11px;
+  letter-spacing:.3em;
+  text-transform:uppercase;
+}
+.hero-date .line{flex:1;height:1px;background:rgba(255,255,255,.5);}
+
+/* ==========  CALLA ICON  ========== */
+.calla{display:inline-block;width:24px;height:32px;}
+
+/* ==========  SAVE THE DATE  ========== */
+.save{
+  padding:80px 32px 60px;
+  text-align:center;
+  background:var(--cream);
+}
+.save .calla{margin:0 auto 24px;color:var(--sage);}
+.save .eyebrow{margin-bottom:16px;}
+.save h2{
+  font-size:42px;
+  line-height:1.1;
+  margin-bottom:8px;
+}
+.save h2 em{font-style:italic;color:var(--sage);}
+.save .place{
+  font-size:13px;
+  letter-spacing:.25em;
+  text-transform:uppercase;
+  color:var(--ink);
+  opacity:.7;
+  margin-top:24px;
+}
+
+/* Countdown */
+.countdown{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:8px;
+  margin:36px 0 0;
+}
+.cd-cell{
+  background:var(--sage);
+  color:#fff;
+  border-radius:18px;
+  padding:18px 8px;
+  text-align:center;
+}
+.cd-num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:30px;
+  font-weight:300;
+  line-height:1;
+}
+.cd-lbl{
+  font-size:9px;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  margin-top:6px;
+  opacity:.85;
+}
+
+/* ==========  ПИСЬМО  ========== */
+.letter{
+  padding:60px 32px;
+  background:var(--cream-2);
+  text-align:center;
+}
+.letter-card{
+  background:var(--cream);
+  border-radius:24px;
+  padding:48px 28px;
+  box-shadow:var(--shadow);
+}
+.letter p{
+  font-family:'Cormorant Garamond',serif;
+  font-size:20px;
+  font-style:italic;
+  line-height:1.5;
+  color:var(--ink);
+}
+.letter p + p{margin-top:18px;}
+.letter .sig{
+  display:block;
+  margin-top:28px;
+  font-size:11px;
+  letter-spacing:.3em;
+  text-transform:uppercase;
+  color:var(--sage);
+  font-style:normal;
+  font-family:'Inter',sans-serif;
+}
+
+/* ==========  ИСТОРИЯ  ========== */
+.story{padding:80px 32px;text-align:center;}
+.story .eyebrow{margin-bottom:20px;}
+.story h2{font-size:34px;line-height:1.2;margin-bottom:32px;}
+.story h2 em{font-style:italic;color:var(--sage);}
+.story-img{
+  width:100%;
+  aspect-ratio:3/4;
+  background:url('IMG_1789.jpeg') center/cover;
+  border-radius:24px;
+  margin-bottom:28px;
+  box-shadow:var(--shadow);
+}
+.story p{
+  font-family:'Cormorant Garamond',serif;
+  font-size:17px;
+  font-style:italic;
+  color:#444;
+  max-width:340px;
+  margin:0 auto;
+}
+
+/* ==========  ПРОГРАММА  ========== */
+.timeline{
+  padding:80px 32px;
+  background:var(--cream-2);
+}
+.timeline-head{text-align:center;margin-bottom:40px;}
+.timeline-head h2{font-size:34px;margin-bottom:8px;}
+.timeline-head h2 em{font-style:italic;color:var(--sage);}
+.tl-list{display:flex;flex-direction:column;gap:14px;}
+.tl-item{
+  background:var(--cream);
+  border-radius:20px;
+  padding:24px 26px;
+  display:flex;
+  align-items:center;
+  gap:20px;
+  box-shadow:var(--shadow);
+  transition:transform .4s ease;
+}
+.tl-item:hover{transform:translateY(-2px);}
+.tl-icon{
+  width:52px;height:52px;
+  border-radius:50%;
+  background:var(--sage);
+  color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+}
+.tl-text .time{
+  font-family:'Cormorant Garamond',serif;
+  font-size:24px;
+  font-style:italic;
+  color:var(--sage);
+  line-height:1;
+}
+.tl-text .label{
+  font-size:11px;
+  letter-spacing:.3em;
+  text-transform:uppercase;
+  color:var(--ink);
+  margin-top:6px;
+}
+.tl-text .desc{
+  font-size:13px;
+  color:#666;
+  margin-top:4px;
+}
+
+/* ==========  ЛОКАЦИЯ  ========== */
+.location{padding:80px 32px;text-align:center;}
+.location .eyebrow{margin-bottom:14px;}
+.location h2{font-size:38px;font-style:italic;color:var(--sage);margin-bottom:6px;}
+.location .venue-name{
+  font-size:11px;
+  letter-spacing:.3em;
+  text-transform:uppercase;
+  color:var(--ink);
+  margin-bottom:32px;
+}
+.map-card{
+  background:var(--cream-2);
+  border-radius:24px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+}
+.map-stub{
+  height:220px;
+  background:
+    linear-gradient(135deg,rgba(138,154,91,.12),rgba(201,184,154,.12)),
+    repeating-linear-gradient(45deg,transparent 0 12px,rgba(138,154,91,.08) 12px 13px);
+  display:flex;align-items:center;justify-content:center;
+  position:relative;
+}
+.pin{
+  width:46px;height:46px;
+  border-radius:50%;
+  background:var(--sage);
+  display:flex;align-items:center;justify-content:center;
+  color:#fff;
+  box-shadow:0 8px 24px rgba(138,154,91,.4);
+}
+.map-info{padding:24px 22px;text-align:left;}
+.map-info .addr{
+  font-family:'Cormorant Garamond',serif;
+  font-size:18px;
+  font-style:italic;
+  color:var(--ink);
+  margin-bottom:18px;
+}
+.btn{
+  display:inline-block;
+  padding:14px 28px;
+  background:var(--ink);
+  color:var(--cream);
+  font-size:11px;
+  letter-spacing:.3em;
+  text-transform:uppercase;
+  text-decoration:none;
+  border-radius:999px;
+  transition:background .3s ease;
+}
+.btn:hover{background:var(--sage);}
+.btn.outline{background:transparent;color:var(--ink);border:1px solid var(--ink);}
+.btn.outline:hover{background:var(--ink);color:var(--cream);}
+
+/* ==========  ДРЕСС-КОД  ========== */
+.dress{
+  padding:80px 32px;
+  background:var(--sage);
+  color:var(--cream);
+  text-align:center;
+}
+.dress .eyebrow{color:rgba(255,255,255,.7);margin-bottom:14px;}
+.dress h2{font-size:38px;margin-bottom:14px;}
+.dress h2 em{font-style:italic;}
+.dress p{
+  font-family:'Cormorant Garamond',serif;
+  font-size:17px;
+  font-style:italic;
+  max-width:340px;
+  margin:0 auto 32px;
+  opacity:.9;
+}
+.palette{
+  display:flex;
+  justify-content:center;
+  gap:14px;
+  margin-top:24px;
+  flex-wrap:wrap;
+}
+.swatch{
+  width:54px;height:54px;
+  border-radius:50%;
+  border:2px solid rgba(255,255,255,.4);
+  position:relative;
+}
+.swatch span{
+  position:absolute;
+  bottom:-22px;left:50%;
+  transform:translateX(-50%);
+  font-size:9px;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,.7);
+  white-space:nowrap;
+}
+.s-champagne{background:#ECE0DA;}
+.s-tearose{background:#F1C8CB;}
+.s-cherry{background:#F6B0BB;}
+.s-cambridge{background:#9CAD8C;border-color:#fff;}
+.s-reseda{background:#7E8C69;border-color:#fff;}
+.s-cocoa{background:#7A4A36;border-color:#fff;}
+
+.dress-note{
+  margin-top:54px;
+  font-size:10px;
+  letter-spacing:.3em;
+  text-transform:uppercase;
+  opacity:.7;
+}
+
+/* ==========  RSVP  ========== */
+.rsvp{
+  padding:80px 32px;
+  background:var(--cream-2);
+  text-align:center;
+}
+.rsvp h2{font-size:38px;margin-bottom:8px;}
+.rsvp h2 em{font-style:italic;color:var(--sage);}
+.rsvp p{
+  font-family:'Cormorant Garamond',serif;
+  font-size:17px;
+  font-style:italic;
+  color:#555;
+  max-width:340px;
+  margin:0 auto 28px;
+}
+.form{display:flex;flex-direction:column;gap:12px;}
+.form input,.form select{
+  padding:16px 20px;
+  border:none;
+  background:var(--cream);
+  border-radius:14px;
+  font-family:'Inter',sans-serif;
+  font-size:13px;
+  color:var(--ink);
+  letter-spacing:.05em;
+  outline:none;
+  transition:box-shadow .3s ease;
+}
+.form input:focus,.form select:focus{
+  box-shadow:0 0 0 2px var(--sage);
+}
+.form input::placeholder{color:#999;letter-spacing:.15em;text-transform:uppercase;font-size:11px;}
+.form button{
+  margin-top:8px;
+  padding:18px;
+  border:none;
+  background:var(--sage);
+  color:#fff;
+  font-family:'Inter',sans-serif;
+  font-size:11px;
+  letter-spacing:.35em;
+  text-transform:uppercase;
+  border-radius:999px;
+  cursor:pointer;
+  transition:background .3s ease;
+}
+.form button:hover{background:var(--ink);}
+
+/* ==========  FINALE  ========== */
+.finale{
+  position:relative;
+  height:80vh;
+  min-height:520px;
+  background:url('IMG_1946.jpeg') center/cover;
+  display:flex;
+  align-items:flex-end;
+  padding:48px 32px;
+  color:#fff;
+}
+.finale::after{
+  content:'';
+  position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(0,0,0,.1),rgba(0,0,0,.6));
+}
+.finale-text{position:relative;z-index:2;text-align:center;width:100%;}
+.finale-text .italiana{font-size:48px;line-height:1;font-style:italic;}
+.finale-text .sub{
+  display:block;
+  margin-top:14px;
+  font-size:10px;
+  letter-spacing:.4em;
+  text-transform:uppercase;
+  opacity:.85;
+}
+
+/* ==========  FOOTER  ========== */
+footer{
+  padding:30px;
+  text-align:center;
+  background:var(--ink);
+  color:rgba(245,241,234,.6);
+  font-size:9px;
+  letter-spacing:.3em;
+  text-transform:uppercase;
+}
+footer span{color:var(--sage-soft);}
+
+/* ==========  АНИМАЦИИ  ========== */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(20px);}
+  to{opacity:1;transform:translateY(0);}
+}
+.fade{animation:fadeUp .9s ease both;}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- 1. HERO -->
+  <section class="hero">
+    <div class="hero-top">
+      <span>Save the Date · 2026</span>
+    </div>
+    <div class="hero-bottom fade">
+      <h1 class="serif">Артём<span class="amp">&</span>Елизавета</h1>
+      <div class="hero-date">
+        <span class="line"></span>
+        <span>22 · 08 · 2026</span>
+        <span class="line"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. SAVE THE DATE -->
+  <section class="save">
+    <!-- Calla SVG -->
+    <svg class="calla" viewBox="0 0 24 32" fill="none" stroke="currentColor" stroke-width="1.2">
+      <path d="M12 30 V14"/>
+      <path d="M6 14 C 6 6, 12 2, 12 2 C 12 2, 18 6, 18 14 C 18 18, 15 20, 12 20 C 9 20, 6 18, 6 14 Z"/>
+      <path d="M12 6 V19" stroke-width=".8"/>
+    </svg>
+    <div class="eyebrow">приглашаем вас разделить с нами</div>
+    <h2 class="serif">самый <em>важный</em><br>день в нашей жизни</h2>
+    <div class="place">22 августа · суббота · 2026</div>
+
+    <div class="countdown" id="cd">
+      <div class="cd-cell"><div class="cd-num" id="d">—</div><div class="cd-lbl">дней</div></div>
+      <div class="cd-cell"><div class="cd-num" id="h">—</div><div class="cd-lbl">часов</div></div>
+      <div class="cd-cell"><div class="cd-num" id="m">—</div><div class="cd-lbl">минут</div></div>
+      <div class="cd-cell"><div class="cd-num" id="s">—</div><div class="cd-lbl">секунд</div></div>
+    </div>
+  </section>
+
+  <!-- 3. ПИСЬМО -->
+  <section class="letter">
+    <div class="letter-card">
+      <p>Дорогие наши родные<br>и близкие друзья,</p>
+      <p>в этот тёплый августовский день<br>мы соединим наши сердца — и хотим,<br>чтобы вы были рядом.</p>
+      <span class="sig">— А & Е —</span>
+    </div>
+  </section>
+
+  <!-- 4. ИСТОРИЯ -->
+  <section class="story">
+    <div class="eyebrow">наша история</div>
+    <h2 class="serif">тишина, в которой<br><em>слышно сердце</em></h2>
+    <div class="story-img"></div>
+    <p>Годы вместе научили нас одному:<br>любовь — это не громкие слова,<br>а тихие жесты, которые длятся вечно.</p>
+  </section>
+
+  <!-- 5. ПРОГРАММА -->
+  <section class="timeline">
+    <div class="timeline-head">
+      <div class="eyebrow">программа дня</div>
+      <h2 class="serif">как пройдёт <em>наш день</em></h2>
+    </div>
+    <div class="tl-list">
+
+      <div class="tl-item">
+        <div class="tl-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+            <path d="M8 21h8M12 17v4M5 4h14l-2 10a5 5 0 0 1-10 0L5 4z"/>
+            <path d="M19 4a3 3 0 0 1 0 6"/>
+          </svg>
+        </div>
+        <div class="tl-text">
+          <div class="time">15:00</div>
+          <div class="label">Welcome</div>
+          <div class="desc">Фуршет · приветственные напитки</div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+            <path d="M12 21s-7-5-7-11a4 4 0 0 1 7-2 4 4 0 0 1 7 2c0 6-7 11-7 11z"/>
+          </svg>
+        </div>
+        <div class="tl-text">
+          <div class="time">16:00</div>
+          <div class="label">Ceremony</div>
+          <div class="desc">Выездная церемония</div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+            <circle cx="12" cy="12" r="9"/>
+            <path d="M12 7v5l3 2"/>
+          </svg>
+        </div>
+        <div class="tl-text">
+          <div class="time">17:00</div>
+          <div class="label">Reception</div>
+          <div class="desc">Банкет · музыка · танцы до ночи</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 6. ЛОКАЦИЯ -->
+  <section class="location">
+    <div class="eyebrow">место встречи</div>
+    <h2 class="serif"><em>Sfera</em></h2>
+    <div class="venue-name">банкетный зал</div>
+
+    <div class="map-card">
+      <div class="map-stub">
+        <div class="pin">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <path d="M12 21s-7-5-7-11a7 7 0 0 1 14 0c0 6-7 11-7 11z"/>
+            <circle cx="12" cy="10" r="2.5"/>
+          </svg>
+        </div>
+      </div>
+      <div class="map-info">
+        <div class="addr">Валикас,<br>1-я Восточная промышленная<br>территория, 10 ст 6</div>
+        <a href="https://yandex.ru/maps/?text=Sfera+Валикас+1-я+Восточная+промышленная+территория+10+ст+6" target="_blank" class="btn">Построить маршрут</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. ДРЕСС-КОД -->
+  <section class="dress">
+    <div class="eyebrow">dress code</div>
+    <h2 class="serif"><em>Pastel</em> Elegance</h2>
+    <p>Мы будем благодарны, если ваш образ<br>поддержит палитру торжества — <br>пастельные, припылённые тона<br>и благородные ткани.</p>
+
+    <div class="palette">
+      <div class="swatch s-champagne"><span>champagne</span></div>
+      <div class="swatch s-tearose"><span>tea rose</span></div>
+      <div class="swatch s-cherry"><span>cherry</span></div>
+      <div class="swatch s-cambridge"><span>cambridge</span></div>
+      <div class="swatch s-reseda"><span>reseda</span></div>
+      <div class="swatch s-cocoa"><span>cocoa</span></div>
+    </div>
+
+    <div class="dress-note">просьба воздержаться от чёрного и ярко-красного</div>
+  </section>
+
+  <!-- 8. RSVP -->
+  <section class="rsvp">
+    <div class="eyebrow">подтверждение</div>
+    <h2 class="serif">Будете ли вы <em>с нами?</em></h2>
+    <p>Пожалуйста, подтвердите присутствие<br>до 1 августа 2026 года.</p>
+
+    <div class="form">
+      <input type="text" placeholder="Ваше имя">
+      <input type="text" placeholder="Имя спутника (если будет)">
+      <select>
+        <option>— Я приду —</option>
+        <option>Да, обязательно буду</option>
+        <option>Да, с +1</option>
+        <option>К сожалению, не смогу</option>
+      </select>
+      <select>
+        <option>— Предпочтения в еде —</option>
+        <option>Без ограничений</option>
+        <option>Вегетарианское меню</option>
+        <option>Без глютена</option>
+      </select>
+      <button type="button">Отправить ответ</button>
+    </div>
+  </section>
+
+</div>
+
+<script>
+// Countdown
+const target = new Date('2026-08-22T16:00:00').getTime();
+function tick(){
+  const now = Date.now();
+  const diff = target - now;
+  if(diff < 0){
+    document.getElementById('cd').innerHTML = '<div style="grid-column:span 4;color:#fff;background:var(--sage);border-radius:18px;padding:24px;font-family:Cormorant Garamond,serif;font-size:22px;font-style:italic;">сегодня тот самый день ♡</div>';
+    return;
+  }
+  const d = Math.floor(diff / 86400000);
+  const h = Math.floor((diff % 86400000) / 3600000);
+  const m = Math.floor((diff % 3600000) / 60000);
+  const s = Math.floor((diff % 60000) / 1000);
+  document.getElementById('d').textContent = d;
+  document.getElementById('h').textContent = String(h).padStart(2,'0');
+  document.getElementById('m').textContent = String(m).padStart(2,'0');
+  document.getElementById('s').textContent = String(s).padStart(2,'0');
+}
+tick(); setInterval(tick,1000);
+
+// Fade-in on scroll
+const io = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.style.opacity = 1;
+      e.target.style.transform = 'translateY(0)';
+    }
+  });
+},{threshold:.15});
+document.querySelectorAll('section').forEach(s=>{
+  s.style.opacity = 0;
+  s.style.transform = 'translateY(24px)';
+  s.style.transition = 'opacity .9s ease, transform .9s ease';
+  io.observe(s);
+});
+</script>
+
+</body>
+</html>
